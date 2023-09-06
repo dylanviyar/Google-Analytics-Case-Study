@@ -117,7 +117,7 @@ Some **Key Steps** include:
 2. Removing duplicates
 3. Checking for data type errors (inconsistent/mismatched data types)
 4. Spell checking the data
-5. 
+5. Ensuring the data stays relevant to the business task
 
 
 
