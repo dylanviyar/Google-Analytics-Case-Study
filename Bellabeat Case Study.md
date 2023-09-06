@@ -23,7 +23,7 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 3. Bellabeat's Marketing Analytics Team: Team of data analysts working together to collect, analyze and report relevant data to supplement Bellabeat's marketing strategy.
 
 ### 1.2 Guiding Questions
-*Note: When deciding what type of questions to ask to motivate analysis, it is important to ensure that the questions being asked are SMART (Specific, Measurable, Action-orientated, Relevant, and Time-bound)*
+*Note: When deciding what type of questions to ask to motivate analysis, it is important to ensure that the questions being asked are 'SMART' (**S**pecific, **M**easurable, **A**ction-orientated, **R**elevant, and **T**ime-bound)*
 
 1. What are are some trends in smart device usage?
 2. How can these trends apply to Bellabeat customers?
@@ -40,7 +40,7 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 
 ### 1.4 The Business Task 
 
-<center>*Analyze FitBit Fitness Tracker Data on user's daily habits to identify trends in usage and how those trends can impact Bellabeat's marketing strategy.*
+*Analyze FitBit Fitness Tracker Data on user's daily habits to identify trends in usage and how those trends can impact Bellabeat's marketing strategy.*
 
 ---
 
@@ -56,6 +56,27 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 4. The data is stored in 18 CSV files
 
 ### 2.1 Downloading the Data
+
+1. In this case study, SQL is used as the main tool for processing analysis
+2. The file chosen for exploration, `dailyActivity_merged.csv`, contains information about user fitness information specifically: distance, steps and minutes of activity.
+
+### 2.2 Possible Limitations of the Dataset
+
+1. There is a high chance of sampling bias, 30 respondents may not accurately represent the total female population
+2. The dataset was collected in 2016, trends identified may no longer be accurate to the current findings
+3. Without access to the original survey, we cannot be confident that the data collection was done completely ethically and without bias
+4. We do not have any information of the 30 women who's data were collected
+
+### 2.3 Does the Data ROCC? 
+*When evaluatiing the status of data to be used for analysis, a simple test is to see if the data you are using is 'ROCC' (**R**eliable, **O**riginal, **C**omprehensive, **C**urrent, **C**ited)*
+
+1. Reliable: -*No*- We are unsure how well the sample represents the total population of women
+2. Original : -*No*- The dataset is gathered from an external source (Amazon Mechanical Turk), it was not collected firsthand
+3. Comprehensive: -*Yes*- The dataset has information relevant to Bellabeat, specfically metrics related to wearable technology, an area that Bellabeat wants to expand in
+4. Current: -*No*- The data is from 2016, six years ago
+5. Cited: -*No*- We are unsure how the external source cited the data
+
+Our provided dataset does not 'ROCC,' thus further exploration and analysis is required to ensure the accurary of our findngs.
 
 
 
