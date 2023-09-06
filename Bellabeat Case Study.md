@@ -1,9 +1,8 @@
----
+
 title: "Bellabeat Case Study"
 author: "Dylan Viyar"
 date: "2023-09-06"
-output: html_document
----
+
 
 This case study is the final project of the Google Data Analytics Professional Certificate, hosted on Coursera. This analysis follows the data exploration process of *Ask, Prepare, Process, Analyze, Share, Act*
 
