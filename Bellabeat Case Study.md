@@ -81,6 +81,46 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 
 Our provided dataset does not 'ROCC,' thus further exploration and analysis is required to ensure the accurary of our findngs.
 
+---
+
+# 3. Process 
+#### In this step, we clean our data; we ensure that the data is relevant, error-free and holds its integrity.
+
+### 3.0 Understanding our SQL Table
+
+1. To get an intial feel of our table we can run the following query to see the schema of our data and view all the column names as well as their data types:
+
+```sql
+SELECT column_name, data_type
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.INFORMATION_SCHEMA.COLUMNS` 
+WHERE table_name = 'DailyActivity'
+```
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/1564dc03-b842-438f-a693-32a25feda963" alt="Daily Activity Table Column Names and DataTypes" width="300">
+
+We see that there is a total of 15 columns with various data types in our table.
+
+2. Now that we understand the columns of our table, we can query to view the first few rows to get a preview of the data and observe the values that the attributes have:
+
+```sql
+SELECT *
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` 
+LIMIT 15 -- Retrieving first 15 rows only
+```
+
+![Daily Activity Head](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/c97c1f1f-848b-4409-9967-5f55f90b5dcb|width=300)
+
+### 3.1 Cleaning our Data
+
+Now that we have a basic idea of how our data looks and its characteristics, we can begin to process our data for analysis.
+Some **Key Steps** include:
+1. Dealing with Null and missing values
+2. Removing duplicates
+3. Checking for data type errors (inconsistent/mismatched data types)
+4. Spell checking the data
+5. 
+
+
+
 
 
 
