@@ -1,7 +1,10 @@
 
-# Bellabeat Case Study: Making Marketing Data-Driven
+# <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/31b77307-1441-48d6-b089-3f4298a00545" alt="BellaBeat Logo" width="75">  Bellabeat Case Study: Making Marketing Data-Driven  
 ### Author: Dylan Viyar
 ### Last Updated: 2023-09-06
+
+
+
 
 This case study is the final project of the Google Data Analytics Professional Certificate, hosted on Coursera. This analysis follows the data exploration process of *Ask, Prepare, Process, Analyze, Share, Act*
 
