@@ -107,7 +107,7 @@ FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
 LIMIT 15 -- Retrieving first 15 rows only
 ```
 
-![Daily Activity Head](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/c97c1f1f-848b-4409-9967-5f55f90b5dcb|width=300)
+![Daily Activity Head](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/c97c1f1f-848b-4409-9967-5f55f90b5dcb|width=100)
 
 ### 3.1 Cleaning our Data
 
