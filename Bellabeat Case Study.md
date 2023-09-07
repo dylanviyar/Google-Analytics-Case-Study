@@ -160,10 +160,11 @@ RENAME COLUMN SedentaryMinutes to SedentaryActiveMinutes
 
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/ba871a42-ae8c-4ce8-b75a-ccc21c086ed8" width="225">
 
+- We can use the `DISTINCT` keyword in SQL to ensure that there are exactly 30 *unique* ids in the table, one unique id for each survey respondent
 
+```sql
 
-
-
+```
 
 
 
