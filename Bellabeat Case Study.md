@@ -140,7 +140,19 @@ OR LightlyActiveMinutes IS NULL
 OR SedentaryMinutes IS NULL
 OR Calories IS NULL
 ```
-<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38" width="200">
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38" width="250">
+
+We can see that there are no rows with NULL values.
+
+
+
+
+
+
+
+
+
+
 
 
 
