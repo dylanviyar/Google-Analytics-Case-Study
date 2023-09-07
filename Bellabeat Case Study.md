@@ -23,7 +23,7 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 
 1. Urška Sršen: Cofounder of Bellabeat and Chief Creative Officer
 2. Sando Mur: Cofounder of Bellabeat, Mathematician, and key member of Bellabeat's executive team
-3. Bellabeat's Marketing Analytics Team: Team of data analysts working together to collect, analyze and report relevant data to supplement Bellabeat's marketing strategy.
+3. Bellabeat's Marketing Analytics Team: Team of data analysts working together to collect, analyze and report relevant data to supplement Bellabeat's marketing strategy
 
 ### 1.2 Guiding Questions
 *Note: When deciding what type of questions to ask to motivate analysis, it is important to ensure that the questions being asked are 'SMART' (**S**pecific, **M**easurable, **A**ction-orientated, **R**elevant, and **T**ime-bound)*
@@ -83,7 +83,7 @@ Our provided dataset does not 'ROCC,' thus further exploration and analysis is r
 
 ---
 
-# 3. Process 
+# 3. PROCESS 
 #### In this step, we clean our data; we ensure that the data is relevant, error-free and holds its integrity.
 
 ### 3.0 Understanding our SQL Table
@@ -99,15 +99,11 @@ WHERE table_name = 'DailyActivity'
 
 We see that there is a total of 15 columns with various data types in our table.
 
-2. Now that we understand the columns of our table, we can query to view the first few rows to get a preview of the data and observe the values that the attributes have:
+2. Now that we understand the columns of our table, we can preview the table to observe the values that the attributes have:
 
-```sql
-SELECT *
-FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` 
-LIMIT 15 -- Retrieving first 15 rows only
-```
+![DailyActivityPreview](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/14c66fcb-c545-4f6e-86b8-3ea23f180066)
 
-![Daily Activity Head](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/c97c1f1f-848b-4409-9967-5f55f90b5dcb|width=100)
+We can see a quick snapshot of our table, and the bottom right of the table shows that there is a total of 940 rows in the table. We can begin cleaning the data.
 
 ### 3.1 Cleaning our Data
 
@@ -143,6 +139,18 @@ OR Calories IS NULL
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38" width="250">
 
 We can see that there are no rows with NULL values.
+
+
+While analyzing the data table, I noticed that there was an inconsistency in the naming of the columns. For distance, the column name is `ModeratelyActiveDistance` whereas for minutes, the column name is `FairlyActiveMinutes`. To keep the column names consistent. I renamed `FairlyActiveMinutes` to `ModeratelyActiveMinutes`:
+
+```sql
+ALTER TABLE kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity
+RENAME COLUMN FairlyActiveMinutes to ModeratelyActiveMinutes
+```
+
+
+
+
 
 
 
