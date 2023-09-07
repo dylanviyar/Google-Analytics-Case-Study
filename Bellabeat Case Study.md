@@ -119,7 +119,28 @@ Some **Key Steps** include:
 4. Spell checking the data
 5. Ensuring the data stays relevant to the business task
 
+Here, we are checking the entire table for any possible NULL values that we may have to deal with:
 
+```sql
+SELECT * 
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` 
+WHERE Id IS NULL
+OR ActivityDate IS NULL
+OR TotalSteps IS NULL
+OR TotalDistance IS NULL
+OR TrackerDistance IS NULL
+OR LoggedActivitiesDistance IS NULL
+OR VeryActiveDistance IS NULL
+OR ModeratelyActiveDistance IS NULL
+OR LightActiveDistance IS NULL
+OR SedentaryActiveDistance IS NULL
+OR VeryActiveMinutes IS NULL
+OR FairlyActiveMinutes IS NULL
+OR LightlyActiveMinutes IS NULL
+OR SedentaryMinutes IS NULL
+OR Calories IS NULL
+```
+![There is no Data to Display SQL Image](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38|width=25)
 
 
 
