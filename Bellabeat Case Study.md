@@ -140,7 +140,13 @@ OR LightlyActiveMinutes IS NULL
 OR SedentaryMinutes IS NULL
 OR Calories IS NULL
 ```
-![There is no Data to Display SQL Image](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38|width=5)
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38" width="200">
+
+
+
+
+
+
 
 
 
