@@ -61,7 +61,7 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 ### 2.1 Downloading the Data
 
 1. In this case study, SQL is used as the main tool for processing analysis
-2. The file chosen for exploration, `dailyActivity_merged.csv`, contains information about user fitness information specifically: distance, steps and minutes of activity.
+2. The file chosen for exploration, `dailyActivity_merged.csv`, contains information about user fitness information specifically: distance, steps and minutes of activity
 
 ### 2.2 Possible Limitations of the Dataset
 
