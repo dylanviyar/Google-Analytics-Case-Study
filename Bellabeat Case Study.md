@@ -115,7 +115,7 @@ Some **Key Steps** include:
 4. Spell checking the data
 5. Ensuring the data stays relevant to the business task
 
-Here, we are checking the entire table for any possible NULL values that we may have to deal with:
+- Here, we are checking the entire table for any possible NULL values that we may have to deal with:
 
 ```sql
 SELECT * 
@@ -141,14 +141,24 @@ OR Calories IS NULL
 We can see that there are no rows with NULL values.
 
 
-While analyzing the data table, I noticed that there was an inconsistency in the naming of the columns. For distance, the column name is `ModeratelyActiveDistance` whereas for minutes, the column name is `FairlyActiveMinutes`. To keep the column names consistent. I renamed `FairlyActiveMinutes` to `ModeratelyActiveMinutes`:
+- While analyzing the data table, I noticed that there was some inconsistencies in the naming of the columns. To keep the column names consistent, I renamed `FairlyActiveMinutes` to `ModeratelyActiveMinutes`, `LightActiveDistance` to `LightlyActiveDistance` and `SedentaryMinutes` to `SedentaryActiveMinutes`:
 
 ```sql
 ALTER TABLE kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity
 RENAME COLUMN FairlyActiveMinutes to ModeratelyActiveMinutes
 ```
 
+```sql
+ALTER TABLE kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity
+RENAME COLUMN LightActiveDistance to LightlyActiveDistance
+```
 
+```sql
+ALTER TABLE kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity
+RENAME COLUMN SedentaryMinutes to SedentaryActiveMinutes
+```
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/ba871a42-ae8c-4ce8-b75a-ccc21c086ed8" width="225">
 
 
 
