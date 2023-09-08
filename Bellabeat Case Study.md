@@ -202,7 +202,7 @@ SELECT *,
 FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`;
 ```
 
-**TODO: ADD `MinutesActive` and `HoursActive` columns**
+**TODO: ADD `MinutesActive`(add all active minutes and not sedentaryminutes) and `HoursActive`(divide by 60) columns**
 
 
 
