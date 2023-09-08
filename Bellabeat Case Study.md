@@ -184,7 +184,7 @@ HAVING count(*)>1
 
 There are no duplicate rows in our table
 
-- Adding `TotalMinutes` and `HitStepGoal` columns to prepare table for analysis:
+- Adding `TotalMinutes`, `Day`, `MinutesActive` and `HoursActive` columns to prepare table for analysis:
 
 ```sql
 --Replacing DailyActivity with another table that has the TotalMinutes column
@@ -201,10 +201,8 @@ SELECT *,
   FORMAT_DATE('%A', ActivityDate) AS Day
 FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`;
 ```
-```sql
-```
 
-
+**TODO: ADD `MinutesActive` and `HoursActive` columns**
 
 
 
