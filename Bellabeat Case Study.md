@@ -109,7 +109,7 @@ We can see a quick snapshot of our table, and the bottom right of the table show
 
 Now that we have a basic idea of how our data looks and its characteristics, we can begin to process our data for analysis.
 Some **Key Steps** include:
-1. Dealing with Null and missing values
+1. Dealing with NULL and missing values
 2. Removing duplicates
 3. Checking for data type errors (inconsistent/mismatched data types)
 4. Spell checking the data
@@ -169,7 +169,7 @@ FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
 
 <img src= "https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b4855f19-a638-4565-b041-1d07ecf973e4" width="180">
 
-We retrieve 33 distinct Ids, three more than the expected 30, we need to express this to our stakeholders, primarly the other members of the data analysis team
+We retrieve 33 distinct ids, three more than the expected 30, we need to express this to our stakeholders, primarily the other members of the data analysis team
 
 - The following query checks the entire table to see if there are any duplicate rows:
 
@@ -184,7 +184,7 @@ HAVING count(*)>1
 
 There are no duplicate rows in our table
 
-- Adding `TotalMinutes`, `Day`, `MinutesActive` and `HoursActive` columns to prepare table for analysis:
+- Adding `TotalMinutes`, `Day`, `MinutesActive`, `HoursActive` and `RatioActiveMin` columns to prepare table for analysis:
 
 ```sql
 --Replacing DailyActivity with another table that has the TotalMinutes column
@@ -202,15 +202,64 @@ SELECT *,
 FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`;
 ```
 
-**TODO: ADD `MinutesActive`(add all active minutes and not sedentaryminutes) and `HoursActive`(divide by 60) columns**
+```sql
+--Replacing DailyActivity with another table that has the ActiveMinutes column
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` AS
+SELECT *,
+VeryActiveMinutes + ModeratelyActiveMinutes + LightlyActiveMinutes  AS ActiveMinutes
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
+```
 
+```sql
+--Replacing DailyActivity with another table that has the HoursActive column
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` AS
+SELECT *,
+ActiveMinutes/60  AS HoursActive
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
+```
 
+```sql
+--Replacing DailyActivity with another table that has the RatioActiveMin column
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` AS
+SELECT *,
+ActiveMinutes/TotalMinutes  AS RatioActiveMin
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
+```
 
+```sql
+--Looking at our new columns in our DailyActivity Table
+SELECT 
+TotalMinutes,
+Day,
+ActiveMinutes,
+HoursActive,
+RatioActiveMin
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
+```
 
+<img src ="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b2c8798f-6e71-448a-8639-21fbfb8d6c96" width="500">
 
+### 3.2 Key Takeaways From Data Cleansing
 
+1. Our table has no NULL or duplicate values
+2. We have 33 total unique ids, contrary to the expected 30
+3. There seems to be an usual amount of recordings of `TotalMinutes` of 1440
 
+Now, our data is clean and ready for analysis.
 
+---
+
+# 4. ANALYZE
+#### In this step, we calculate metrics, examine patterns and summarize our data to help answer our business task.
+
+### 4.1 Gathering Summary Statistics
+
+While analyzing it is important to look at specific data calculations, most notably:
+1. SUM
+2. MEAN
+3. MAX
+4. MIN
+5. STANDARD DEVIATION
 
 
 
