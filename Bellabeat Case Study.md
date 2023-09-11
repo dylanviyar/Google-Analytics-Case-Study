@@ -61,7 +61,7 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 ### 2.1 Downloading the Data
 
 1. In this case study, SQL is used as the main tool for processing analysis
-2. The file chosen for exploration, `dailyActivity_merged.csv`, contains information about user fitness information specifically: distance, steps and minutes of activity
+2. The files chosen for exploration, `dailyActivity_merged.csv` and 'SleepDay.csv` contain information about user fitness information specifically: distance, steps, minutes of activity and sleeping habits
 
 ### 2.2 Possible Limitations of the Dataset
 
@@ -245,6 +245,8 @@ FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
 2. We have 33 total unique ids, contrary to the expected 30
 3. There seems to be an usual amount of recordings of `TotalMinutes` of 1440
 
+
+## TODO: ADD CLEANING PROCESS FOR SLEEPDAY TABLE
 Now, our data is clean and ready for analysis.
 
 ---
