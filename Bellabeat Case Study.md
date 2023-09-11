@@ -261,6 +261,37 @@ While analyzing it is important to look at specific data calculations, most nota
 4. MIN
 5. STANDARD DEVIATION
 
+SUM Statisitic: 
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b8d7057d-856a-4a5b-8f0a-73cd17987b70" width="650">
+
+MEAN(Average) Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/0b1c5f58-7473-4265-8d59-c129554a9127" width="650">
+
+MAX Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/a7fde172-a090-482c-bf51-3a5191640eea" width="650">
+
+MIN Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/05bc565b-9e6c-40c4-acf7-bc084e6d3828" width="650">
+
+STANDARD DEVIATION Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/029c080b-a3f0-41d5-8eab-4b1151acd6f4" width="650">
+
+
+*Note:* All the above tables are sorted in descending order and grouped by `DAY`
+
+### 4.2 Other Calculations for Analysis
+
+Aside from the summary statistics, additional calculations are helpful for finding patterns and trends. Supplemental calculations I decided to analyze were:
+
+1. Most frequent day that the respondents excerise
+2. Relationship between calories and time active
+3. Relationship between calories and distance travelled
+4. **PROCESS SLEEP TABLE, THEN JOIN TABLE HERE AND FIND RELATIONSHIP BETWEEN SLEEP AND CALORIES AS WELL AS SLEEP AND TIME ACTIVE***
 
 
 
