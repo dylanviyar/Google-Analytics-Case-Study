@@ -378,7 +378,9 @@ STANDARD DEVIATION Statistic:
 
 **Key Takeaways From `DailyActivity` Summary Statistics:**
 
-1. 
+1. Tuesday has the highest average of calories burnt
+2. Thursday has both the high calories burnt and the lowest calories burnt
+3. There seems to be a positive correlation between number of steps and calories burnt
 
 #### Summary Statistics for `SleepDay`
 ---
@@ -406,11 +408,7 @@ STANDARD DEVIATION Statistic:
 
 **Key Takeaways From `SleepDay` Summary Statistics:**
 
-1. Tuesday has the highest average of calories burnt
-2. Thursday has both the high calories burnt and the lowest calories burnt
-3. There seems to be a positive correlation between number of steps and calories burnt
-4. 
-
+1.
 
 
 
