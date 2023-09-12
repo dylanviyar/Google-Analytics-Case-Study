@@ -61,7 +61,7 @@ The executive staff at Bellabeat would like to conduct analysis on consumer usag
 ### 2.1 Downloading the Data
 
 1. In this case study, SQL is used as the main tool for processing analysis
-2. The files chosen for exploration, `dailyActivity_merged.csv` and 'SleepDay.csv` contain information about user fitness information specifically: distance, steps, minutes of activity and sleeping habits
+2. The files chosen for exploration, `dailyActivity_merged.csv` and `SleepDay.csv` contain information about user fitness information specifically: distance, steps, minutes of activity and sleeping habits
 
 ### 2.2 Possible Limitations of the Dataset
 
@@ -88,7 +88,7 @@ Our provided dataset does not 'ROCC,' thus further exploration and analysis is r
 
 ### 3.0 Understanding our SQL Table
 
-1. To get an intial feel of our table we can run the following query to see the schema of our data and view all the column names as well as their data types:
+1. To get an intial feel of our tables we can run the following queries to see the schema of our data and view all the column names as well as their data types:
 
 ```sql
 SELECT column_name, data_type
@@ -97,13 +97,24 @@ WHERE table_name = 'DailyActivity'
 ```
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/1564dc03-b842-438f-a693-32a25feda963" alt="Daily Activity Table Column Names and DataTypes" width="300">
 
-We see that there is a total of 15 columns with various data types in our table.
+```sql
+SELECT column_name, data_type
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.INFORMATION_SCHEMA.COLUMNS` 
+WHERE table_name = 'SleepDay'
+```
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/60eb95f9-1588-4169-a8cd-85256520887d" width="300"> 
 
-2. Now that we understand the columns of our table, we can preview the table to observe the values that the attributes have:
+
+We see that there is a total of 15 columns in our `DailyActivity` table and 5 columns in our `SleepDay` table, all with various data types in our table.
+
+2. Now that we understand the columns of our tables, we can preview the tables to observe the values that the attributes have:
 
 ![DailyActivityPreview](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/14c66fcb-c545-4f6e-86b8-3ea23f180066)
 
-We can see a quick snapshot of our table, and the bottom right of the table shows that there is a total of 940 rows in the table. We can begin cleaning the data.
+![sleepdaypreview1](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/ee845a4b-f20b-40a1-a2a7-b2640a2fbb6f)
+
+
+We can see a quick snapshot of our tables, and the bottom right  shows that there is a total of 940 rows in the `DailyActivity` table and 413 rows in our `SleepDay` table. We can begin cleaning the data.
 
 ### 3.1 Cleaning our Data
 
@@ -115,7 +126,7 @@ Some **Key Steps** include:
 4. Spell checking the data
 5. Ensuring the data stays relevant to the business task
 
-- Here, we are checking the entire table for any possible NULL values that we may have to deal with:
+- Here, we are checking the data tables for any possible NULL values that we may have to deal with:
 
 ```sql
 SELECT * 
@@ -138,10 +149,21 @@ OR Calories IS NULL
 ```
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38" width="250">
 
+```sql
+SELECT *  
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` 
+WHERE Id IS NULL
+OR SleepDay IS NULL
+OR TotalSleepRecords IS NULL
+OR TotalMinutesAsleep IS NULL
+OR TotalTimeInBed IS NULL
+```
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38" width="250">
+
 We can see that there are no rows with NULL values.
 
-
-- While analyzing the data table, I noticed that there was some inconsistencies in the naming of the columns. To keep the column names consistent, I renamed `FairlyActiveMinutes` to `ModeratelyActiveMinutes`, `LightActiveDistance` to `LightlyActiveDistance` and `SedentaryMinutes` to `SedentaryActiveMinutes`:
+- While analyzing the `DailyActivity` table, I noticed that there was some inconsistencies in the naming of the columns. To keep the column names consistent, I renamed `FairlyActiveMinutes` to `ModeratelyActiveMinutes`, `LightActiveDistance` to `LightlyActiveDistance` and `SedentaryMinutes` to `SedentaryActiveMinutes`:
 
 ```sql
 ALTER TABLE kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity
@@ -160,7 +182,7 @@ RENAME COLUMN SedentaryMinutes to SedentaryActiveMinutes
 
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/ba871a42-ae8c-4ce8-b75a-ccc21c086ed8" width="225">
 
-- We can use the `DISTINCT` statement in SQL to ensure that there are exactly 30 *unique* ids in the table, one unique id for each survey respondent:
+- We can use the `DISTINCT` statement in SQL to ensure that there are exactly 30 *unique* ids in the tables, one unique id for each survey respondent:
 
 ```sql
 SELECT count(DISTINCT Id) AS Num_of_Unique_Ids
@@ -169,12 +191,18 @@ FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
 
 <img src= "https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b4855f19-a638-4565-b041-1d07ecf973e4" width="180">
 
-We retrieve 33 distinct ids, three more than the expected 30, we need to express this to our stakeholders, primarily the other members of the data analysis team
+```sql
+SELECT COUNT(DISTINCT Id) AS Num_of_Unique_Ids
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` 
+```
+<img src ="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/3e40ab95-d77f-47e4-ba06-2286189e03f9" width="180">
 
-- The following query checks the entire table to see if there are any duplicate rows:
+We retrieve 33 and 24 distinct ids, when we expected 30, we need to express this to our stakeholders, primarily the other members of the data analysis team
+
+- The following queries checks the entire table to see if there are any duplicate rows:
 
 ```sql
-SELECT Id,ActivityDate,TotalSteps,TotalDistance,TrackerDistance,LoggedActivitiesDistance,VeryActiveDistance,ModeratelyActiveDistance,LightlyActiveDistance,SedentaryActiveDistance,VeryActiveMinutes,ModeratelyActiveMinutes,LightlyActiveMinutes,SedentaryActiveMinutes,Calories, count(*)
+SELECT Id,ActivityDate,TotalSteps,TotalDistance,TrackerDistance,LoggedActivitiesDistance,VeryActiveDistance,ModeratelyActiveDistance,LightlyActiveDistance,SedentaryActiveDistance,VeryActiveMinutes,ModeratelyActiveMinutes,LightlyActiveMinutes,SedentaryActiveMinutes,Calories, count(*) AS NumberOfDistinctRows
 FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` 
 GROUP BY Id,ActivityDate,TotalSteps,TotalDistance,TrackerDistance,LoggedActivitiesDistance,VeryActiveDistance,ModeratelyActiveDistance,LightlyActiveDistance,SedentaryActiveDistance,VeryActiveMinutes,ModeratelyActiveMinutes,LightlyActiveMinutes,SedentaryActiveMinutes,Calories
 HAVING count(*)>1
@@ -182,9 +210,27 @@ HAVING count(*)>1
 
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8692399-fea0-4e99-b2c1-88a2415baa38" width="250">
 
-There are no duplicate rows in our table
+There are no duplicate rows in the `DailyActivity` table
 
-- Adding `TotalMinutes`, `Day`, `MinutesActive`, `HoursActive` and `RatioActiveMin` columns to prepare table for analysis:
+```sql
+SELECT Id,SleepDay,TotalSleepRecords,TotalMinutesAsleep, TotalTimeInBed, count(*) AS NumberOfDistinctRows
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` 
+GROUP BY Id,SleepDay,TotalSleepRecords,TotalMinutesAsleep, TotalTimeInBed
+HAVING count(*)>1
+```
+![DuplicateRows SleepDay](https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/bb7b7f80-5a30-4df3-9a15-ad48228329cb)
+
+We see that there are duplicates in our `SleepDay` table, the following query creates a new table with only distinct rows:
+
+```sql
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` AS
+SELECT
+DISTINCT *
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`
+```
+Now, both tables only contain distinct, unique rows.
+
+- Adding `TotalMinutes`, `Day`, `MinutesActive`, `HoursActive` and `RatioActiveMin` columns to prepare `DailyActivity` table for analysis:
 
 ```sql
 --Replacing DailyActivity with another table that has the TotalMinutes column
