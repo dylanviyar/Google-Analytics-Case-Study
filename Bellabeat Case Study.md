@@ -345,6 +345,8 @@ While analyzing it is important to look at specific data calculations, most nota
 4. MIN
 5. STANDARD DEVIATION
 
+#### Summary Statistics for `DailyActivity`:
+---
 SUM Statisitic: 
 
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b8d7057d-856a-4a5b-8f0a-73cd17987b70" width="650">
@@ -365,8 +367,12 @@ STANDARD DEVIATION Statistic:
 
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/029c080b-a3f0-41d5-8eab-4b1151acd6f4" width="650">
 
-
 *Note:* All the above tables are sorted in descending order and grouped by `DAY`
+
+#### Summary Statistics for `SleepDay`
+---
+
+
 
 ### 4.2 Other Calculations for Analysis
 
