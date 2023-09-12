@@ -86,7 +86,7 @@ Our provided dataset does not 'ROCC,' thus further exploration and analysis is r
 # 3. PROCESS 
 #### In this step, we clean our data; we ensure that the data is relevant, error-free and holds its integrity.
 
-### 3.0 Understanding our SQL Table
+### 3.0 Understanding our SQL Tables
 
 1. To get an intial feel of our tables we can run the following queries to see the schema of our data and view all the column names as well as their data types:
 
@@ -105,7 +105,7 @@ WHERE table_name = 'SleepDay'
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/60eb95f9-1588-4169-a8cd-85256520887d" width="300"> 
 
 
-We see that there is a total of 15 columns in our `DailyActivity` table and 5 columns in our `SleepDay` table, all with various data types in our table.
+We see that there is a total of 15 columns in our `DailyActivity` table and 5 columns in our `SleepDay` table, all with various data types.
 
 2. Now that we understand the columns of our tables, we can preview the tables to observe the values that the attributes have:
 
@@ -285,14 +285,50 @@ FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
 
 <img src ="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b2c8798f-6e71-448a-8639-21fbfb8d6c96" width="500">
 
+- Adding `TotalHoursAsleep`, `TotalHoursInBed` and `MinutesDifference` to `SleepDay`:
+
+```sql
+--Replacing SleepDay with another table that has the TotalHoursAsleep column
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` AS
+SELECT *,
+TotalMinutesAsleep/60  AS TotalHoursAsleep
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`
+```
+
+```sql
+--Replacing SleepDay with another table that has the TotalHoursInBed column
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` AS
+SELECT *,
+TotalTimeInBed/60  AS TotalHoursInBed
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`
+```
+```sql
+--Replacing SleepDay with another table that has the MinutesDifference column
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` AS
+SELECT *,
+TotalTimeInBed-TotalMinutesAsleep AS MinutesDifference
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`
+```
+
+```sql
+--Looking at our new columns in our SleepDay Table
+SELECT 
+TotalHoursAsleep,
+TotalHoursinBed,
+MinutesDifference
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`
+```
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/05604e11-1618-4320-b85e-3d7c5cd6a774" width="300">
+
+
+
 ### 3.2 Key Takeaways From Data Cleansing
 
-1. Our table has no NULL or duplicate values
-2. We have 33 total unique ids, contrary to the expected 30
-3. There seems to be an usual amount of recordings of `TotalMinutes` of 1440
+1. Our tables have no NULL values
+2. We had duplicate rows in our `SleepDay` table, we were able to remove the duplicate rows
+3. We have 33 and 24 total unique ids, contrary to the expected 30
+4. There seems to be an usual amount of recordings of `TotalMinutes` of 1440 in the `DailyActivity` table
 
-
-## TODO: ADD CLEANING PROCESS FOR SLEEPDAY TABLE
 Now, our data is clean and ready for analysis.
 
 ---
