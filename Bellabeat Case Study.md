@@ -377,6 +377,7 @@ STANDARD DEVIATION Statistic:
 *Note:* All the above tables are grouped by `DAY`
 
 **Key Takeaways From `DailyActivity` Summary Statistics:**
+
 1. 
 
 #### Summary Statistics for `SleepDay`
@@ -404,6 +405,7 @@ STANDARD DEVIATION Statistic:
 *Note:* All the above tables are grouped by `DAY`
 
 **Key Takeaways From `SleepDay` Summary Statistics:**
+
 1. 
 
 
