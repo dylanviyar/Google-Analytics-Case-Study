@@ -381,7 +381,7 @@ Aside from the summary statistics, additional calculations are helpful for findi
 1. Most frequent day that the respondents excerise
 2. Relationship between calories and time active
 3. Relationship between calories and distance travelled
-4. **TODO: PROCESS SLEEP TABLE, THEN JOIN TABLE HERE AND FIND RELATIONSHIP BETWEEN SLEEP AND CALORIES AS WELL AS SLEEP AND TIME ACTIVE***
+4. **TODO: SUMMARY STATS SLEEP TABLE, THEN JOIN TABLE HERE AND FIND RELATIONSHIP BETWEEN SLEEP AND CALORIES AS WELL AS SLEEP AND TIME ACTIVE***
 
 
 
