@@ -285,7 +285,7 @@ FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity`
 
 <img src ="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b2c8798f-6e71-448a-8639-21fbfb8d6c96" width="500">
 
-- Adding `TotalHoursAsleep`, `TotalHoursInBed` and `MinutesDifference` to `SleepDay`:
+- Adding `TotalHoursAsleep`, `TotalHoursInBed` , `MinutesDifference` and `Day` to `SleepDay`:
 
 ```sql
 --Replacing SleepDay with another table that has the TotalHoursAsleep column
@@ -309,16 +309,23 @@ SELECT *,
 TotalTimeInBed-TotalMinutesAsleep AS MinutesDifference
 FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`
 ```
-
+```sql
+--Replacing SleepDay with another table that has the Day column
+CREATE OR REPLACE TABLE `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` AS
+SELECT *,
+  FORMAT_DATE('%A', SleepDay) AS Day
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`;
+```
 ```sql
 --Looking at our new columns in our SleepDay Table
 SELECT 
 TotalHoursAsleep,
 TotalHoursinBed,
-MinutesDifference
+MinutesDifference,
+Day
 FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay`
 ```
-<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/05604e11-1618-4320-b85e-3d7c5cd6a774" width="300">
+<img src ="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/530b8c07-eb83-4064-976e-424b21c96be1" width="400">
 
 
 
@@ -367,10 +374,34 @@ STANDARD DEVIATION Statistic:
 
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/029c080b-a3f0-41d5-8eab-4b1151acd6f4" width="650">
 
-*Note:* All the above tables are sorted in descending order and grouped by `DAY`
+*Note:* All the above tables are grouped by `DAY`
 
 #### Summary Statistics for `SleepDay`
 ---
+SUM Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/a9b1cf5f-cbe6-47dd-8fca-b7a3c340a1bc" width="650">
+
+MEAN(Average) Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/37a86cc5-e00d-457a-b51f-963dbcf18120" width="650">
+
+MAX Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/43f91871-82db-45e9-b5b8-5cf7a76d3fc0" width="650">
+
+MIN Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/efb6134a-2382-4072-9cac-b03b20745996" width="650">
+
+STANDARD DEVIATION Statistic:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/a30e4e7a-5440-4508-8ca3-32ba8eeadb21" width="650">
+
+*Note:* All the above tables are grouped by `DAY`
+
+
+
 
 
 
