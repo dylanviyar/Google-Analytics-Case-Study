@@ -422,7 +422,6 @@ Aside from the summary statistics, additional calculations are helpful for findi
 3. Relationship between calories and distance travelled
 4. Relationship between amount of sleep and calories
 5. Relationship between sleep and time active
- **TODO: JOIN SLEEP TABLE FOR STEP 4/5**
 
 ```sql
 --Determining which day of the week had the most recorded exercises
