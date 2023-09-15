@@ -530,8 +530,8 @@ Determining the relationship between average calories and average active minutes
 
 The graph is sporadic and seemingly without a pattern, which suggests that there is no relationship between the average calories burnt and the average active minutes. This could be an data collection error as we would expect a positive linear correlation for these two variables
 
-Calories vs. Distance Travelled:
+Calories vs. Steps:
 
-
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/9e8052cb-7306-41e8-836e-f046ef5f6079" width="500">
 
 
