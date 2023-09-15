@@ -408,10 +408,10 @@ STANDARD DEVIATION Statistic:
 
 **Key Takeaways From `SleepDay` Summary Statistics:**
 
-1.
-
-
-
+1. The respondents had the most cummulative sleep on Wednesdays, but the most average amount of sleep per night on Sundays
+2. On average, people stay in bed the longest, sleeping or not, on Sundays
+3. On Monday a had the highest amount of hours of sleep
+4. Interestingly, the lowest recording of sleep duration of less than an hour, took place on a Sunday
 
 ### 4.2 Other Calculations for Analysis
 
