@@ -505,6 +505,12 @@ ORDER BY AVGTotalMinutesAsleep DESC
 
 It is difficult to determine a relationship without further visualization, the next step in the data analysis process
 
+### 4.3 Key Takeaways From Analysis
 
+1. 
+---
+
+# Share
+#### In this step, we create captivating graphs and charts to make our analysis easily digestable and understandable.
 
 
