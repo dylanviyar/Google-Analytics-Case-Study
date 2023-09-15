@@ -420,7 +420,92 @@ Aside from the summary statistics, additional calculations are helpful for findi
 1. Most frequent day that the respondents excerise
 2. Relationship between calories and time active
 3. Relationship between calories and distance travelled
-4. **TODO: SUMMARY STATS SLEEP TABLE, THEN JOIN TABLE HERE AND FIND RELATIONSHIP BETWEEN SLEEP AND CALORIES AS WELL AS SLEEP AND TIME ACTIVE***
+4. Relationship between amount of sleep and calories
+5. Relationship between sleep and time active
+ **TODO: JOIN SLEEP TABLE FOR STEP 4/5**
+
+```sql
+--Determining which day of the week had the most recorded exercises
+SELECT Day,
+COUNT(Day) AS ExerciseOccurrences
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` 
+GROUP BY Day
+ORDER BY ExerciseOccurrences DESC
+```
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/9db94431-5b4f-4ebc-a7f3-04c3dcd9ef74" width="300">
+
+Tuesday is the most preferred day for exercise according to our respondents
+
+```sql
+SELECT 
+Id,
+AVG(Calories) AS AVGCalories,
+AVG(VeryActiveMinutes) AS AVGVeryActiveMin,
+AVG(ModeratelyActiveMinutes) AS AVGModeratelyActiveMins,
+AVG(LightlyActiveMinutes) AS AVGLightlyActiveMins,
+AVG(ActiveMinutes) AS AVGActiveMin,
+AVG(TotalSteps) AS AVGSteps,
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` 
+GROUP BY Id
+ORDER BY AVGCalories DESC
+```
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/f8ca9f3f-c20b-48a0-b773-10cd6d2b5079" width="600">
+
+There does not seem to be a clear correlation between calories and time active, further visualization is necessary to determine if any relationship exists
+
+```sql
+SELECT 
+Id,
+AVG(Calories) AS AVGCalories,
+AVG(VeryActiveDistance) AS AVGVeryActiveDistance,
+AVG(ModeratelyActiveDistance) AS AVGModeratelyActiveDistances,
+AVG(LightlyActiveDistance) AS AVGLightlyActiveDistances,
+AVG(TotalSteps) AS AVGSteps,
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` 
+GROUP BY Id
+ORDER BY AVGCalories DESC
+```
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/244a59ee-2793-412b-8140-159f27b421ac" width="600">
+
+Similarly, there does not seem to be a clear correlation between calories and distance travelled
+
+```sql
+--Joining SleepDay and DailyActivity to analyze calories and amount of sleep
+SELECT t1.Id,
+AVG(t1.Calories) AS AVGCalories,
+AVG(t2.TotalMinutesAsleep) AS AVGTotalMinutesAsleep,
+AVG(t2.TotalHoursAsleep) AS AVGTotalHoursAsleep,
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` AS t1
+JOIN `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` AS t2
+ON t1.Id = t2.Id
+GROUP BY t1.Id
+ORDER BY AVGTotalMinutesAsleep DESC
+```
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/63f670b1-5965-4d3a-b9b8-d3e24d34e754" width="400">
+
+There seems to be a positive correlation between the amount of calories burnt and the amount of sleep an individual gets
+
+```sql
+--Joining SleepDay and DailyActivity to analyze time active and amount of sleep
+SELECT t1.Id,
+AVG(t1.ActiveMinutes) AS AVGActiveMinutes,
+AVG(t1.HoursActive) AS AVGHoursActive,
+AVG(t2.TotalMinutesAsleep) AS AVGTotalMinutesAsleep,
+AVG(t2.TotalHoursAsleep) AS AVGTotalHoursAsleep,
+FROM `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.DailyActivity` AS t1
+JOIN `kinetic-axle-394521.FitBit_Fitness_Tracker_Data.SleepDay` AS t2
+ON t1.Id = t2.Id
+GROUP BY t1.Id
+ORDER BY AVGTotalMinutesAsleep DESC
+```
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/b4cd82ef-9242-4343-b79e-d0b5e3ef3a5d" width="450">
+
+It is difficult to determine a relationship without further visualization, the next step in the data analysis process
+
 
 
 
