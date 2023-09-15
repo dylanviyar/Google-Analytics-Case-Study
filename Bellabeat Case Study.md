@@ -516,6 +516,18 @@ It is difficult to determine a relationship without further visualization, the n
 ---
 
 # Share
-#### In this step, we create captivating graphs and charts to make our analysis easily digestable and understandable.
+#### In this step, we create intentional, captivating graphs and charts to showcase our analysis clearly.
+
+*We utilize Tableau to create the following visualizations*
+
+Understanding the frequency of exercise throughout the week:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/7b16fa3a-55b4-45c2-b003-f2271ab52a1d" width="300">
+
+Determining the relationship between average calories and average active minutes:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/a45731f9-fed6-4d95-8de5-b7da362b2e6a" width="500">
+
+The graph is sporadic and seemingly without a pattern, which suggests that there is no relationship between the average calories burnt and the average active minutes. This could be an data collection error as we would expect a positive linear correlation for these two variables
 
 
