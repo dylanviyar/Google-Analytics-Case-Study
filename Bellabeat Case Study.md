@@ -436,6 +436,7 @@ ORDER BY ExerciseOccurrences DESC
 Tuesday is the most preferred day for exercise according to our respondents
 
 ```sql
+--Determining the relationship between calories and time active
 SELECT 
 Id,
 AVG(Calories) AS AVGCalories,
@@ -454,6 +455,7 @@ ORDER BY AVGCalories DESC
 There does not seem to be a clear correlation between calories and time active, further visualization is necessary to determine if any relationship exists
 
 ```sql
+--Determining the relationship between calories and distance travelled
 SELECT 
 Id,
 AVG(Calories) AS AVGCalories,
@@ -507,7 +509,10 @@ It is difficult to determine a relationship without further visualization, the n
 
 ### 4.3 Key Takeaways From Analysis
 
-1. 
+1. There doesn't seem to be a drastic difference in wellness habits during the weekends, the sample of respondents may not be working in the traditional 5 day work week
+2. Need to visualize the relationship between calories and distance travelled/time active to further determine the correlation, if any at all
+3. Amount of sleep has importance when understanding our respondent's wellness habits
+
 ---
 
 # Share
