@@ -515,7 +515,7 @@ It is difficult to determine a relationship without further visualization, the n
 
 ---
 
-# Share
+# 5. Share
 #### In this step, we create intentional, captivating graphs and charts to showcase our analysis clearly.
 
 *We utilize Tableau to create the following visualizations*
@@ -534,4 +534,42 @@ Calories vs. Steps:
 
 <img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/9e8052cb-7306-41e8-836e-f046ef5f6079" width="500">
 
+Calories vs Amount of Sleep:
 
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/2df23d7d-f5b0-470c-a0ce-72d107fbaf4b" width="500">
+
+
+Hours Active vs Time Asleep:
+
+<img src="https://github.com/dylanviyar/Google-Analytics-Case-Study/assets/81194849/01e4f9fd-4cb6-412a-85b1-b6abddcd3b96" width="500">
+
+If we ignore the the sudden drops at right before 6 and 7 hours of sleep and treat those points as potential outliers, we can see the peaks of active time come when users get 6 to 8 hours of sleep. However if users get more then 8 hours, we can see a decline in activity, possiblity due to feeling sluggish from too much rest
+
+---
+
+# 6. ACT
+#### In this step, we consider all the data we analyzed to best answer the business task by providing data-driven insights and recommendations.
+
+### 6.0 Recall The Guiding Questions
+
+1. What are are some trends in smart device usage?
+2. How can these trends apply to Bellabeat customers?
+3. How can these trends ultimately influence the marketing strategy of Bellabeat?
+
+### 6.1 Notable Trends in Smart Device Usage
+
+1. There is a correlation *(Note: Correlation does not imply causation)* between the amount of sleep an individual gets and the time they are active, with the most active people getting 6-8 hours of sleep, and less active people getting less or even more sleep then this threshold
+2. In our sample size, our respondents are logging more activity on their smart devices on the weekdays, rather than the weekends, with the peak being on Tuesdays
+
+### 6.2 Are These Trends Applicable to Bellabeat Consumers?
+
+In short, yes. The trends found in our analysis can apply to Bellabeat customers as the behaviors we observed will most likely represent the patterns found in purchasers of Bellabeat smart device products. Both FitBit and Bellabeat develop products to support the health and well-being of the public
+
+### 6.3 Recommendations for Bellabeat's Marketing Strategy
+
+1. Utilize the relationship between sleep and activity! Bellabeat can incorporate a sleep tracker or a sleep notification system to ensure that users are getting the most optimal amount of sleep to promote smart device usage
+2. Understand when users want to exercise. Our respondents were the most active during the weekdays, so have the smart device continously remind and reinforce user's preexisting habits
+3. At the same time, try to build new exercise habits! We know that users are not as inclined to exercise on the weekends, so subtles notifications on the weekends to encourage activity could envoke more usage from Bellabeat consumers
+4. With all these features, Bellabeat can market their smart device as a product the helps users stay healthy and expand their fitness goals through data driven recommendations
+
+---
