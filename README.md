@@ -12,5 +12,7 @@ Analyze FitBit Fitness Tracker Data on user's daily habits to identify trends in
 Data cleansing, data analysis, data visualization through SQL and Tableau
 
 ### Data
-The data is publicly available on Kaggle [here](
+The data is publicly available on Kaggle [here](https://www.kaggle.com/datasets/arashnic/fitbit) 
+
+
 
