@@ -558,7 +558,7 @@ If we ignore the the sudden drops at right before 6 and 7 hours of sleep and tre
 
 ### 6.1 Notable Trends in Smart Device Usage
 
-1. There is a correlation *(Note: Correlation does not imply causation)* between the amount of sleep an individual gets and the time they are active, with the most active people getting 6-8 hours of sleep, and less active people getting less or even more sleep then this threshold
+1. When looking at the graph and imagining a line best fit, there is a correlation *(Note: Correlation does not imply causation)* between the amount of sleep an individual gets and the time they are active, with the most active people getting 6-8 hours of sleep, and less active people getting less or even more sleep then this threshold
 2. In our sample size, our respondents are logging more activity on their smart devices on the weekdays, rather than the weekends, with the peak being on Tuesdays
 
 ### 6.2 Are These Trends Applicable to Bellabeat Consumers?
@@ -569,7 +569,7 @@ In short, yes. The trends found in our analysis can apply to Bellabeat customers
 
 1. Utilize the relationship between sleep and activity! Bellabeat can incorporate a sleep tracker or a sleep notification system to ensure that users are getting the most optimal amount of sleep to promote smart device usage
 2. Understand when users want to exercise. Our respondents were the most active during the weekdays, so have the smart device continously remind and reinforce user's preexisting habits
-3. At the same time, try to build new exercise habits! We know that users are not as inclined to exercise on the weekends, so subtles notifications on the weekends to encourage activity could envoke more usage from Bellabeat consumers
+3. At the same time, try to build new exercise habits! We know that users are not as inclined to exercise on the weekends, so subtle notifications on the weekends to encourage activity could envoke more usage from Bellabeat consumers
 4. With all these features, Bellabeat can market their smart device as a product the helps users stay healthy and expand their fitness goals through data driven recommendations
 
 ---
